@@ -38,6 +38,8 @@ const options = {
                 title: 'Error',
                 message: 'Please choose a date in the future',
             });
+            startBtn.disabled = true;
+            startBtn.classList.remove("active");
         } else {
             startBtn.disabled = false;
             startBtn.classList.add("active");
@@ -56,17 +58,22 @@ const hoursPrev = document.querySelector("[data-hours]");
 const minutesPrev = document.querySelector("[data-minutes]");
 const secondsPrev = document.querySelector("[data-seconds]");
 
+const datePicker = document.querySelector("#datetime-picker");
+
 startBtn.addEventListener("click", () => {
     startBtn.disabled = true;
     startBtn.classList.remove("active");
 
 
-    setInterval(() => {
+    const timerId = setInterval(() => {
         const currentTime = new Date().getTime();
         const timeDifference = userSelectedDate.getTime() - currentTime;
 
         if (timeDifference <= 0) {
-            clearInterval("#datetime-picker");
+            clearInterval(timerId);
+            datePicker.disabled = false;
+            startBtn.disabled = true;
+            startBtn.classList.remove("active");
             return;
         }
         const { days, hours, minutes, seconds } = convertMs(timeDifference);
@@ -76,6 +83,8 @@ startBtn.addEventListener("click", () => {
         minutesPrev.textContent = addLeadingZero(minutes);
         secondsPrev.textContent = addLeadingZero(seconds);
     }, 1000);
+
+    datePicker.disabled = true;
 
 });
 
