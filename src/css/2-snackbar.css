@@ -1,0 +1,127 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 360px;
+}
+
+.form-label {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+
+    font-weight: 400;
+    font-size: 16px;
+
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+    margin-bottom: 16px;
+}
+
+.form-input {
+    width: 360px;
+    height: 40px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    transition: border-color 250ms ease-in-out;
+}
+
+.form-input:hover {
+    border-color: #000000;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #4e75ff;
+    outline: none;
+}
+
+.form-fieldset {
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 360px;
+
+    transition: border-color 250ms ease-in-out;
+}
+
+.form-fieldset:hover {
+    border-color: #000000;
+    outline: none;
+}
+
+.form-radio-group__legend {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+
+    text-align: left;
+}
+
+.radio-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    gap: 48px;
+
+    height: 32px;
+}
+
+.form-radio-group__label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+
+    font-weight: 400;
+    font-size: 16px;
+
+    line-height: 1.5;
+    color: #2e2f42;
+}
+
+.form-radio {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: #757575;
+
+    transition: accent-color 250ms ease-in-out;
+}
+
+.form-radio:checked {
+    accent-color: #4e75ff;
+}
+
+.submit-btn {
+    border: none;
+    border-radius: 8px;
+    padding-block: 8px;
+    padding-inline: 16px;
+    width: 360px;
+    height: 40px;
+
+    background-color: #4e75ff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+
+    margin-top: 24px;
+
+    transition: background-color 250ms ease-in-out;
+}
+.container .submit-btn:hover,
+.container .submit-btn:focus {
+    background-color: #6c8cff;
+    cursor: pointer;
+}

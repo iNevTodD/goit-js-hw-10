@@ -9,9 +9,44 @@
   </head>
   <body>
     <main>
+      <load src="./partials/back-link.html" />
       <div class="container">
         <h1 class="main-title">Snackbar</h1>
-        <load src="./partials/back-link.html" />
+
+        <form class="form">
+          <label class="form-label">
+            Delay (ms)
+            <input class="form-input" type="number" name="delay" required />
+          </label>
+
+          <fieldset class="form-fieldset">
+            <legend class="form-radio-group__legend">State</legend>
+            <div class="radio-group">
+              <label class="form-radio-group__label">
+                <input
+                  class="form-radio"
+                  type="radio"
+                  name="state"
+                  value="fulfilled"
+                  required
+                />
+                Fulfilled
+              </label>
+              <label class="form-radio-group__label">
+                <input
+                  class="form-radio"
+                  type="radio"
+                  name="state"
+                  value="rejected"
+                  required
+                />
+                Rejected
+              </label>
+            </div>
+          </fieldset>
+
+          <button class="submit-btn" type="submit">Create notification</button>
+        </form>
       </div>
     </main>
     <script type="module" src="./js/2-snackbar.js"></script>
