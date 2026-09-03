@@ -4,6 +4,8 @@
   | default @import url()
   |============================
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
@@ -14,3 +16,4 @@
 @import url('./header.css');
 @import url('./badges.css');
 @import url('./back-link.css');
+@import url('./1-timer.css');
