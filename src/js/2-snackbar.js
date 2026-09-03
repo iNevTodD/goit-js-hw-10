@@ -7,7 +7,6 @@ const form = document.querySelector(".form");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    delayInput.value = "";
     const delay = Number(delayInput.value);
     if (delay < 0) {
         iziToast.error({
@@ -29,27 +28,29 @@ form.addEventListener("submit", (event) => {
 
     const promise = new Promise((resolve, reject) => {
         const choosedOption = selectedRadio.value;
-        let currentDelay = delay;
+        delayInput.value = "";
+
         setTimeout(() => {
             if (choosedOption === "fulfilled") {
-                resolve(`✅ Fulfilled promise in ${currentDelay}ms`);
+                resolve(delay);
             } else if (choosedOption === "rejected") {
-                reject(`❌ Rejected promise in ${currentDelay}ms`);
+                reject(delay);
             }
 
-        }, currentDelay);
+        }, delay);
     })
 
     promise.then(value => {
         iziToast.success({
             title: 'Success',
-            message: value,
+            message: `✅ Fulfilled promise in ${value}ms`,
         });
 
     }).catch((error) => {
         iziToast.error({
             title: 'Error',
-            message: error,
+            message: `❌ Rejected promise in ${error}ms`,
         });
     });
+
 });
